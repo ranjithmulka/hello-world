@@ -1,0 +1,18 @@
+---
+- hosts: ub
+  become: true
+  tasks:
+  - name: updating repository index
+    apt:
+      update_cache: yes
+
+  - name: apache2 installation on servers
+    apt:
+      name: apache2
+      state: latest
+
+  - name: adding php support fro apache
+    apt:
+      name: libapache2-mod-php    
+      state: latest
+        
